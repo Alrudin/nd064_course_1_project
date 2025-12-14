@@ -2,3 +2,5 @@
 database.db
 .mypy_cache/
 __pycache__/
+.vagrant/
+.DS_Store
