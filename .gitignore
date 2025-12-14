@@ -1,2 +1,4 @@
 .myvenv
 database.db
+.mypy_cache/
+__pycache__/
