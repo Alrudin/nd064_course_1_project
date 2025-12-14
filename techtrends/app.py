@@ -5,7 +5,9 @@ from werkzeug.exceptions import abort
 import logging
 
 # Set up logging to handle STDOUT and STDERR
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
+    level=logging.DEBUG,
+    datefmt='%Y-%m-%d %H:%M:%S')
 logger = logging.getLogger(__name__)
 
 # Define the counter for database connections
