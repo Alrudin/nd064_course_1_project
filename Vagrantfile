@@ -8,9 +8,11 @@ Vagrant.configure("2") do |config|
     inline: "sudo su - && zypper update && zypper install -y apparmor-parser"
   
   # Set the image for the vagrant box
-  config.vm.box = "opensuse/Leap-15.2.x86_64"
+  # This has been changed to accomodate Mac users
+  config.vm.box = "bento/opensuse-leap-15"
   # Set the image version
-  config.vm.box_version = "15.2.31.632"
+  config.vm.box_version = "202510.26.0"
+  
 
   # Forward the ports from the guest VM to the local host machine
   # Forward more ports, as needed
@@ -21,8 +23,9 @@ Vagrant.configure("2") do |config|
   # Set the static IP for the vagrant box
   config.vm.network "private_network", ip: "192.168.50.4"
   
-  # Configure the parameters for VirtualBox provider
-  config.vm.provider "virtualbox" do |vb|
+  # This has been changed to paralles provider to accomodate Mac users. Virtualbox would have worked.
+  # Configure the parameters for Parallels provider
+  config.vm.provider "parallels" do |vb|
     vb.memory = "4096"
     vb.cpus = 4
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
