@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends
+keywords:
+  - techtrends
+version: 1.0.0
+maintainers:
+  - name: Johan Møller
+    email: johan@johans.dk
+description: A Helm chart for deploying the TechTrends application
